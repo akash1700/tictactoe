@@ -1,0 +1,50 @@
+import java.util.*;
+public class mollick {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size");
+        int n = sc.nextInt();
+        System.out.println("Enter the elements");
+        int arr[] = new int[n];
+        ArrayList<Integer> ll = new ArrayList<Integer>();
+        ArrayList<Integer> ll1 = new ArrayList<Integer>();
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int b = 33;
+        int p = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
+
+            int a = 0;
+
+
+            for (int j = 0; j < i + 2; j++) {
+                a += arr[j];
+
+            }
+            ll.add(a);
+        }
+
+        System.out.println(ll);
+
+        int sum = 0;
+        for (int i = 0; i < ll.size(); i++) {
+            sum += ll.get(i);
+        }
+        System.out.println("the sum is" + sum);
+
+        int g = 0;
+        int m = 0;
+        for (int i = 0; i < ll.size() - 1; i++) {
+
+            if (ll.get(i) == b) {
+                m = ll.get(i);
+                System.out.print("the same value" + m);
+
+            }
+        }
+    }
+}
+
+
