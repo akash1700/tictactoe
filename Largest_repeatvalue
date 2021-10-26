@@ -1,0 +1,49 @@
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Largest_repeatvalue {
+    public static void main(String args[]) {
+        // your code here
+        ArrayList<Integer> ll = new ArrayList<Integer>();
+        System.out.println("Enter the size");
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        System.out.println("Enter the elements :");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+
+        }
+        for (int i = 0; i < arr.length; i++) {
+            int count = 0;
+            for (int j =0; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                }
+            }
+            ll.add(count);
+        }
+        System.out.println(ll);
+        int largest=ll.get(0);
+        int lowest=ll.get(0);
+        int k;
+        for (int i=0;i<ll.size();i++){
+            if(ll.get(i)>largest){
+                largest=ll.get(i);
+            }
+            if(ll.get(i)<largest){
+                lowest=ll.get(i);
+            }
+        }
+        int differcece=0;
+        differcece=largest-lowest;
+        System.out.println(largest);
+        System.out.println(lowest);
+
+        System.out.println("the differcnce is"+differcece);
+
+     }
+   }
